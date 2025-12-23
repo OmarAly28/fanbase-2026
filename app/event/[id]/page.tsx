@@ -125,6 +125,10 @@ export default async function EventPage({
           marginTop: 16,
         }}
       >
+        <div style={{ marginTop: 10, fontWeight: 900, color: "red" }}>
+          CALENDAR TEST
+        </div>
+
         <div style={{ fontSize: 18, fontWeight: 800 }}>
           📍 {ev.venue_name} · {VenueTypeLabel(ev.venue_type)}
         </div>
@@ -166,7 +170,7 @@ export default async function EventPage({
               Add to calendar →
             </a>
           )}
-          
+
           <CopyLink />
           {ev.external_link && (
             <a href={ev.external_link} target="_blank" rel="noreferrer">
