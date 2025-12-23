@@ -46,6 +46,29 @@ function mapsUrl(addressOrArea: string) {
   )}`;
 }
 
+function googleCalendarUrl(params: {
+  title: string;
+  startIso: string;
+  durationMinutes?: number;
+  details?: string;
+  location?: string;
+}) {
+  const start = new Date(params.startIso);
+  const end = new Date(start.getTime() + (params.durationMinutes ?? 120) * 60 * 1000);
+
+  const fmt = (d: Date) => d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+  const dates = `${fmt(start)}/${fmt(end)}`;
+
+  const url = new URL("https://calendar.google.com/calendar/render");
+  url.searchParams.set("action", "TEMPLATE");
+  url.searchParams.set("text", params.title);
+  url.searchParams.set("dates", dates);
+  if (params.details) url.searchParams.set("details", params.details);
+  if (params.location) url.searchParams.set("location", params.location);
+  return url.toString();
+}
+
+
 export default async function EventPage({
   params,
 }: {
@@ -75,6 +98,14 @@ export default async function EventPage({
 
   const mainTitle = ev.match_label?.trim() ? ev.match_label : ev.title;
   const where = ev.address?.trim() || ev.general_area?.trim() || "";
+  const calLink = googleCalendarUrl({
+  title: mainTitle,
+  startIso: ev.starts_at,
+  durationMinutes: 150,
+  details: "Fan listing on Fanbase 2026.",
+  location: where || undefined,
+});
+
   const mapLink = where ? mapsUrl(where) : null;
 
   return (
@@ -129,6 +160,11 @@ export default async function EventPage({
               Open in Maps →
             </a>
           )}
+          
+          <a href={calLink} target="_blank" rel="noreferrer">
+            Add to calendar →
+          </a>
+
           <CopyLink />
           {ev.external_link && (
             <a href={ev.external_link} target="_blank" rel="noreferrer">
