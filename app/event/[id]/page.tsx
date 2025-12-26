@@ -82,6 +82,7 @@ export default async function EventPage({
       "id,event_type,title,match_label,starts_at,venue_name,address,general_area,venue_type,tags,external_link,is_featured,city_id"
     )
     .eq("id", id)
+    .eq("status", "approved")
     .single();
 
   if (eErr || !event) return notFound();
