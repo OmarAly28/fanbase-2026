@@ -134,13 +134,14 @@ export default function SubmitPage() {
         general_area: generalArea.trim() || null,
         tags,
         external_link: externalLink.trim() || null,
+        status: "pending",
         is_featured: false,
       };
 
       const { error } = await supabase.from("events").insert(payload);
       if (error) throw new Error(error.message);
 
-      setStatus("✅ Submitted! Go check the city page.");
+      setStatus("Submitted! Pending review.");
       // light reset
       setMatchLabel("");
       setTitle("");

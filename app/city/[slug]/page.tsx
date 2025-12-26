@@ -69,6 +69,7 @@ export default async function CityPage({
     .eq("city_id", c.id)
     .eq("event_type", "watch_party")
     .gt("starts_at", nowIso)
+    .eq("status", "approved")
     .order("starts_at", { ascending: true });
 
   if (evErr) {
