@@ -2,6 +2,13 @@
 
 FanRoute is a lightweight MVP for discovering Local World Cup watch parties and fan meetups by host city.
 
+## Why FanRoute
+FanRoute was built to solve a simple problem: during major tournaments,
+fans struggle to discover reliable, community-driven watch parties
+without digging through scattered social posts or generic event platforms.
+
+This MVP focuses on safety, moderation, and city-based discovery.
+
 ## Features
 - Browse host cities and approved events
 - Submit a watch party/meetup (pending approval)
