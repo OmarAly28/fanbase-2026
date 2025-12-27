@@ -20,3 +20,14 @@ This MVP focuses on safety, moderation, and city-based discovery.
 - Next.js (App Router)
 - Supabase (Postgres + API)
 - Vercel deployment
+
+## Screenshots
+
+### Home
+![Home](/public/screens/home.png)
+
+### City
+![City](/public/screens/city.png)
+
+### Event
+![Event](/public/screens/event.png)
