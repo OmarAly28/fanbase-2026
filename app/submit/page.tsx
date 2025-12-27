@@ -147,7 +147,8 @@ export default function SubmitPage() {
       const { error } = await supabase.from("events").insert(payload);
       if (error) throw new Error(error.message);
 
-      setStatus("Submitted! Pending review.");
+      setStatus("✅ Submitted! It’s pending review and will appear after approval.");
+
 
       // light reset
       setMatchLabel("");
@@ -174,7 +175,7 @@ export default function SubmitPage() {
 
       <h1 style={{ fontSize: 32, fontWeight: 800 }}>Submit</h1>
       <p style={{ marginTop: 6, opacity: 0.8 }}>
-        Add a watch party or meetup (pending approval).
+        Add a watch party or meetup. Submissions are reviewed before appearing publicly.
       </p>
 
       <form

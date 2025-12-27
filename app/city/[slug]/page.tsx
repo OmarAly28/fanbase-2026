@@ -94,7 +94,7 @@ export default async function CityPage({
 
       <h1 style={{ fontSize: 32, fontWeight: 900 }}>{c.name}</h1>
       <p style={{ opacity: 0.8 }}>
-        Watch parties · upcoming only · sorted by time
+        Upcoming watch parties in {c.name}. Featured listings appear first.
       </p>
 
       <div style={{ display: "flex", gap: 12, marginTop: 10 }}>
@@ -115,10 +115,10 @@ export default async function CityPage({
       )}
 
       <section style={{ marginTop: 24 }}>
-        <h2>Upcoming</h2>
+        <h2>All Upcoming</h2>
 
         {regular.length === 0 ? (
-          <p style={{ opacity: 0.8 }}>No watch parties listed yet.</p>
+          <p style={{ opacity: 0.8 }}>No approved watch parties yet. <Link href="/submit">Submit one →</Link></p>
         ) : (
           <div style={{ display: "grid", gap: 10 }}>
             {regular.map((e) => (
