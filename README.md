@@ -31,3 +31,6 @@ This MVP focuses on safety, moderation, and city-based discovery.
 
 ### Event
 ![Event](public/screens/event.png)
+
+### Essentials
+![Essentials](public/screens/essentials.png)
