@@ -24,10 +24,10 @@ This MVP focuses on safety, moderation, and city-based discovery.
 ## Screenshots
 
 ### Home
-![Home](/public/screens/home.png)
+![Home](public/screens/home.png)
 
 ### City
-![City](/public/screens/city.png)
+![City](public/screens/city.png)
 
 ### Event
-![Event](/public/screens/event.png)
+![Event](public/screens/event.png)
