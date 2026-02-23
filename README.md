@@ -19,6 +19,14 @@ This MVP focuses on safety, moderation, and city-based discovery.
 - Admin dashboard to approve/reject and feature events
 - Event detail pages with share link + add-to-calendar
 
+  Events  will have:
+    - RSVP / attendance count
+    - Chat per event
+    - Organizer profiles
+    - Ratings
+    - Photos
+    - Verified hosts
+
 ## Tech stack
 - Next.js (App Router)
 - Supabase (Postgres + API)
